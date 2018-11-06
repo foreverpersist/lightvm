@@ -1,47 +1,57 @@
 # lightvm
 
-	Light VM customized for cloud container applications
+	Light VM customized for cloud containers which has only one application
+
+	Run one VM instance for each container
 
 ## Targets
 
-	lightvm is designed for cloud container applications, only decicates to provide essential and isolated physical resources for application. 
+	lightvm is designed for cloud containers, only decicates to provide essential and isolated physical resources for application. 
 
-	Isolation and efficiency are all design targets.
+	Isolation, Performance, Applicability are all design targets.
+
+> * Isolation:     equal with tradition VM or Unikernel
+> * Performance:   better than tradition VM, close to Unikernel
+> * Applicability: equal with Host
 
 ## Features
 
-	Only for Cloud Container Applications
+	New OS based on Unikernel-like OS: OSv
 
-### Physical Resource
+### Native Linux Application Support
 
-	Flexible CPU, Memory, Disk, Network
-	No graphic devices
-	No sound devices
-	No other external devices
+	Support unmodified applications in Linux
 
-### Scheduling Policy
+	There is still a limit: following libraries can't be statically linked to applications because they have been compiled to kernel (x64)
 
-	Simplest policy only for efficiency
-	No fairness or other rules
+> *	libc
+> * libm
+> * libpthread
+> * libdl
+> * librt
+> * libstdc++
+> * libaio
+> * libxenstore
+> * libcrypt
 
-### Isolation
+### Multi-processes Support
 
-	Outer isolation
-	Only MNT for inner isolation
+	Support multi-processes
 
-### Overhead
-	
-	Like native container
+	`fork`, `exec` are supported
 
+### Pass-through I/O Support
+
+	Support file sharing between VM and host with VirtFS
 
 ## Works
 
-	Customize linux kernel
+	Optimizing OS for container based on OSv
 
-### Remove Redundant Physical Resource
+### Multi-Address Spaces
 
-### Simplify Scheduling Policy
+### IPC
 
-### Remove Redundant Inner Isolation
+### VirtFS
 
-### Decrease Overhead
+### Performance Optimization
