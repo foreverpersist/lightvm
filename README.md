@@ -4,7 +4,7 @@
 
 ## Targets
 
-	lightvm is designed for cloud container applications, only decicate to provide essential and isolated physical resources for application. 
+	lightvm is designed for cloud container applications, only decicates to provide essential and isolated physical resources for application. 
 
 	Isolation and efficiency are all design targets.
 
@@ -26,8 +26,8 @@
 
 ### Isolation
 
-		Outer isolation
-		Only MNT for inner isolation
+	Outer isolation
+	Only MNT for inner isolation
 
 ### Overhead
 	
