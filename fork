@@ -1,0 +1,14 @@
+fork
+	分数据结构
+	|-复制信息
+		|-SEM
+		|-FILES
+		|-FS
+		|-MM [COW]
+		|-NAMESPACES
+		|-IOCONTEXT
+		|-TLS [AX=0]
+	|-分割时间片
+	|-加入运行队列(可能先运行CHILD)
+
+What OSv thread needs for running is {MM, TLS}

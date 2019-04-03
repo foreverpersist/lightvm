@@ -1,0 +1,44 @@
+# Influence of vma_list & vma_list_mutex
+
+unsigned long all_vmas_size();
+
+static inline vma_list_type::iterator
+find_intersecting_vma(uintptr_t addr);
+
+static inline std::pair<vma_list_type::iterator, vma_list_type::iterator>
+find_intersecting_vmas(const addr_range& r);
+
+uintptr_t find_hole(uintptr_t start, uintptr_t size);
+
+ulong evacuate(uintptr_t start, uintptr_t end);
+
+uintptr_t allocate(vma *v, uintptr_t start, size_t size, bool search);
+
+error advise(void* addr, size_t size, int advice);
+
+void* map_anon(const void* addr, size_t size, unsigned flags, unsigned perm);
+
+void* map_file(const void* addr, size_t size, unsigned flags, unsigned perm,
+              fileref f, f_offset offset);
+
+void vm_fault(uintptr_t addr, exception_frame* ef);
+
+void vma::update_flags(unsigned flag);
+
+void anon_vma::split(uintptr_t edge);
+
+jvm_balloon_vma::~jvm_balloon_vma();
+
+ulong map_jvm(unsigned char* jvm_addr, size_t size, size_t align, balloon_ptr b);
+
+void file_vma::split(uintptr_t edge);
+
+error mprotect(const void *addr, size_t len, unsigned perm);
+
+error munmap(const void *addr, size_t length);
+
+error msync(const void* addr, size_t length, int flags);
+
+error mincore(const void *addr, size_t length, unsigned char *vec);
+
+std::string procfs_maps();
